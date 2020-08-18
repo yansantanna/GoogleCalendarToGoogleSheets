@@ -1,21 +1,16 @@
 function export_gcal_to_gsheet(){
 
 
-
-
-var mycal = "micorreo@gmail.com";
+var mycal = "IdNumber o myemail@gmail.com";
 var cal = CalendarApp.getCalendarById(mycal);
 
-
-//Pon la fecha de incio y la fecha fin. Por defecto la fecha fin esta hoy. 
-//Si quieres cambiar la fecha fin copiar el mismo formato de la fecha de inicio : "January 01, 2020 00:00:00 CST"
 
 var events = cal.getEvents(new Date("January 01, 2020 00:00:00 CST"), new Date(), {search: '-project123'});
 
 
 var sheet = SpreadsheetApp.getActiveSheet();
 
-var header = [[ "Día de la Semana", "Fecha", "Titulo", "Dirección", "Descripción", "Creado por:"]]
+var header = [[ "Day of the Week", "Date", "Title", "Address", "Description", "Create by:"]]
 var range = sheet.getRange(1,1,1,6);
 range.setValues(header);
 
@@ -33,6 +28,6 @@ for (var i=0;i<events.length;i++) {
 
 function getWeekDay(date){
   var dayNumber = date.getDay();
-  var days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sabado'];
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   return days[dayNumber];
 }
