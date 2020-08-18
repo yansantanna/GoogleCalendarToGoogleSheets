@@ -45,14 +45,17 @@ ________________________________________________________________________________
 
 Ejecutar el codigo.
 
-Personalizaciones importantes:
+## Personalizaciones importantes:
 
-Cambiar el calendario que va a ser exportado, variable myCal:
+### Cambiar el ID del calendario que va a ser exportado, variable myCal:
 var mycal = "micorreo@gmail.com";
 
-Debes poner el ID del calendario: 
+Para obtener el ID abra Google Calendar, en el lado izquierdo busque el calendario, pulsa los 3 puntos("configurar y compartir") y en Integrar el calendario
+Estará en ID del calendario, copie y pegue donde está "micorreo@gmail.com", con comillas. 
 
-Ir al Google Calendar
 
+Fecha de inicio y Fecha fin:
+
+var events = cal.getEvents(new Date("January 01, 2020 00:00:00 CST"), new Date(), {search: '-project123'});
 
 
