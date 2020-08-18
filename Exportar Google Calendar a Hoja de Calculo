@@ -1,9 +1,7 @@
 function export_gcal_to_gsheet(){
 
 
-// Si es tu calendario personal, donde esta "micorreo@gmail.com", pon lo tuyo, Si es un calendario compartido pon ID del calendario.
-// Para obtener el ID abra Google Calendar, en el lado izquierdo busque el calendario, pulsa los 3 puntos("configurar y compartir") y en Integrar el calendario
-//Estará en ID del calendario, copie y pegue donde está "micorreo@gmail.com", con comillas. 
+
 
 var mycal = "micorreo@gmail.com";
 var cal = CalendarApp.getCalendarById(mycal);
