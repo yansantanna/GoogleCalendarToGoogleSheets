@@ -1,0 +1,40 @@
+function export_gcal_to_gsheet(){
+
+
+// Si es tu calendario personal, donde esta "micorreo@gmail.com", pon lo tuyo, Si es un calendario compartido pon ID del calendario.
+// Para obtener el ID abra Google Calendar, en el lado izquierdo busque el calendario, pulsa los 3 puntos("configurar y compartir") y en Integrar el calendario
+//Estará en ID del calendario, copie y pegue donde está "micorreo@gmail.com", con comillas. 
+
+var mycal = "micorreo@gmail.com";
+var cal = CalendarApp.getCalendarById(mycal);
+
+
+//Pon la fecha de incio y la fecha fin. Por defecto la fecha fin esta hoy. 
+//Si quieres cambiar la fecha fin copiar el mismo formato de la fecha de inicio : "January 01, 2020 00:00:00 CST"
+
+var events = cal.getEvents(new Date("January 01, 2020 00:00:00 CST"), new Date(), {search: '-project123'});
+
+
+var sheet = SpreadsheetApp.getActiveSheet();
+
+var header = [[ "Día de la Semana", "Fecha", "Titulo", "Dirección", "Descripción", "Creado por:"]]
+var range = sheet.getRange(1,1,1,6);
+range.setValues(header);
+
+  
+
+for (var i=0;i<events.length;i++) {
+  var row=i+2;
+
+  var details=[[ getWeekDay(events[i].getStartTime()),  events[i].getStartTime() , events[i].getTitle() , events[i].getLocation() , events[i].getDescription(), events[i].getCreators() ]];
+  var range=sheet.getRange(row,1,1,6);
+  range.setValues(details);
+ }
+}
+
+
+function getWeekDay(date){
+  var dayNumber = date.getDay();
+  var days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sabado'];
+  return days[dayNumber];
+}
