@@ -27,20 +27,21 @@ function getWeekDay(date){ var dayNumber = date.getDay(); var days = ['Domingo',
 _________________________________________________________________________________________________________________________________________________________
 Execute o código.
 
-Personalizações importantes:
-Altere o ID do calendário a ser exportado, variável myCal:
+## Personalizações importantes:
+
+### Altere o ID do calendário a ser exportado, variável myCal:
 var mycal = "mymail@gmail.com";
 
 Para obter o ID abra o Google Calendar, no lado esquerdo procure o calendário, pressione os 3 pontos ("configurar e compartilhar") e em Integrar o calendário Ele estará no ID do calendário, copie e cole onde está "mymail@gmail.com" , com aspas.
 
-Data de início e data de término:
+### Data de início e data de término:
 var events = cal.getEvents(new Date("January 01, 2020 00:00:00 CST"), new Date(), {search: '-project123'});
 
 A data de início é a primeira e a data de término é a segunda na linha de comando. É possível, por exemplo, pegar aqueles de 01/01/2019 a 18/08/2020. Para que isso seja possível, você deve alterar as datas na linha de código:
 
 var events = cal.getEvents(new Date("January 01, 2019 00:00:00 CST"), new Date("August 18, 2020 23:59:59 CST"), {search: '-project123'});
 
-Parâmetros do cabeçalho:
+### Parâmetros do cabeçalho:
 var header = [[ "Día de la Semana", "Fecha", "Titulo", "Dirección", "Descripción", "Creado por:"]] var range = sheet.getRange(1,1,1,6); range.setValues(header);
 
 E
