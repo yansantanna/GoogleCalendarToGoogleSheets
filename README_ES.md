@@ -1,4 +1,4 @@
-# GoogleCalendarToGoogleSheet
+# Google Calendar To Google Sheet
 Este código es para exportar los datos de google calendar a google sheets. Esta es la versión en Castellano.
 Es posible cambiar los parámetros para los que creas que son necesarios. El objetivo es tener más posibilidades para controlar tus datos de Google Calendar.
 Es muy importante tener en cuenta que utilizar el mismo formato para rellenar tu google calendar es fundamental para futuros analisis de datos. 
@@ -8,6 +8,8 @@ Lo primero que debes hacer es abrir una hoja de calculo de google, en Herramient
 
 Copiar y pegar el código:
 _______________________________________________________________________________________________________________________________________________________
+```java
+
 function export_gcal_to_gsheet(){
 
 
@@ -40,7 +42,9 @@ function getWeekDay(date){
   var days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sabado'];
   return days[dayNumber];
 }
-_________________________________________________________________________________________________________________________________________________________
+
+```
+________________________________________________________________________________________________________________________________________________________
 
 
 Ejecutar el codigo.
